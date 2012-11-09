@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="whermuth.sitecontent">
+<body>
+
+<metal:main fill-slot="content-core">
+    <tal:main-macro metal:define-macro="content-core"
+        tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+        <div id="slfcon-wrapper" tal:condition="view/haveProducts">
+            <tal:block tal:repeat="item view/contained_products">
+                <div class="ov-wrapper row">
+                    <div class="ovImg cell width-1:4 position-0">
+                        <img tal:replace="structure item/imageTag" />
+                    </div>
+                    <div class="ovText cell width-3:4 position-1:4">
+                    <a tal:attributes="href item/url">
+                        <div class="containedTitle" tal:content="item/title" />
+                    </a>
+                    <div class="containedDescription" tal:content="item/description" />
+                        <div class="ovMore">
+                            <a tal:attributes="href item/url">mehr</a>
+                        </div>
+                    </div>        
+                </div>
+                <div class="visualClear"><!-- --></div>
+            </tal:block>
+        </div>
+
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>

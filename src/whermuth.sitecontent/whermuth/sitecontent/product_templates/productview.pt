@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="whermuth.sitecontent">
+<body>
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+        <h1 tal:content="context/Title" />
+        <div id="product-text">
+            <div tal:content="structure context/main" />
+        </div>
+        
+    <div class="visualClear">&nbsp;</div>
+        
+        <tal:block tal:condition="view/haveTeasers">
+            <a class="next browse left"></a>
+            <div class="scrollable">
+                <div class="items">
+                    <div class="teas-wrapper">
+                        <p class="customerTitle" tal:content="context/Title" />
+                        <div class="teaerImg">
+                            <a href="" tal:define="context_url context/absolute_url"
+                                rel="prettyPhoto[gallery]"
+                                tal:attributes="href python:context_url+'/@@images/ovImage'">
+                            <img tal:define="scales context/@@images;
+                                             picture python:scales.scale('ovImage', width=128, height=128);"
+                                tal:condition="picture"
+                                tal:attributes="src picture/url;
+                                                width picture/width;
+                                                height picture/height;" />
+                            </a>
+                        </div>
+                        <p class="discreet" tal:content="context/Description" />
+                    </div>
+                    <tal:block tal:repeat="teaser view/contained_teasers">
+                        <div class="teas-wrapper">
+                            <p class="customerTitle" tal:content="teaser/title" />
+                            <div class="teaserImg">
+                                <a href="" class="xprettyPhoto"
+                                    rel="prettyPhoto[gallery]"
+                                    tal:define="item_url teaser/url"
+                                    tal:attributes="href python:item_url+'/@@images/image'">
+                                    <img tal:replace="structure teaser/imageTag" />
+                                </a>
+                            </div>
+                            <p class="discreet" tal:content="teaser/description" />
+                        </div>
+                    </tal:block>
+                </div>
+            </div>
+            <a class="prev browse right"></a>
+        </tal:block>
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>
