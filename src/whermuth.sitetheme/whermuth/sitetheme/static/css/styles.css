@@ -2782,17 +2782,17 @@ input[type="button"].btn-block {
 .btn-primary {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #006dcc;
-  background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
-  background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
-  background-image: -o-linear-gradient(top, #0088cc, #0044cc);
-  background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+  background-color: #2967c4;
+  background-image: -moz-linear-gradient(top, #297cc4, #2948c4);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#297cc4), to(#2948c4));
+  background-image: -webkit-linear-gradient(top, #297cc4, #2948c4);
+  background-image: -o-linear-gradient(top, #297cc4, #2948c4);
+  background-image: linear-gradient(to bottom, #297cc4, #2948c4);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
-  border-color: #0044cc #0044cc #002a80;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff297cc4', endColorstr='#ff2948c4', GradientType=0);
+  border-color: #2948c4 #2948c4 #1c3185;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #0044cc;
+  *background-color: #2948c4;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
@@ -2803,12 +2803,12 @@ input[type="button"].btn-block {
 .btn-primary.disabled,
 .btn-primary[disabled] {
   color: #ffffff;
-  background-color: #0044cc;
-  *background-color: #003bb3;
+  background-color: #2948c4;
+  *background-color: #2541af;
 }
 .btn-primary:active,
 .btn-primary.active {
-  background-color: #003399 \9;
+  background-color: #20399a \9;
 }
 .btn-warning {
   color: #ffffff;
@@ -3147,7 +3147,7 @@ input[type="submit"].btn.btn-mini {
   background-color: #e6e6e6;
 }
 .btn-group.open .btn-primary.dropdown-toggle {
-  background-color: #0044cc;
+  background-color: #2948c4;
 }
 .btn-group.open .btn-warning.dropdown-toggle {
   background-color: #f89406;
@@ -5399,10 +5399,12 @@ input.datetime-widget,
   font-weight: bold;
   width: 100%;
 }
-#content-core label {
+#content-core label,
+#content label {
   font-weight: bold;
 }
-#content-core label span.formHelp {
+#content-core label span.formHelp,
+#content label span.formHelp {
   display: block;
   color: #999999;
 }
@@ -6193,34 +6195,84 @@ table.grid th {
 .visualClear {
   clear: both;
 }
-body {
-  padding-top: 20px;
-  padding-bottom: 60px;
+#topbar + #navbar,
+#topbar + #frontpage-header {
+  margin-top: 40px;
 }
-/* Custom container */
-.container {
-  margin: 0 auto;
-  max-width: 1000px;
-}
-.container > hr {
-  margin: 60px 0;
+#navbar {
+  border-bottom: 2px solid #172c81;
+  background: url(../images/header_bg.png) 50% 0px no-repeat transparent;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
 }
 /* Main marketing message and sign up button */
 .jumbotron {
-  margin: 80px 0;
-  text-align: center;
+  padding: 20px 0px 120px 0;
+  background: url(../images/header_bg.png) 50% 0px no-repeat transparent;
 }
-.jumbotron h1 {
-  font-size: 100px;
-  line-height: 1;
+.jumbotron #logo {
+  display: block;
+  overflow: hidden;
+  width: 327px;
+  height: 135px;
+  border: none;
+  background: url(../images/logo.png) 0px 0px no-repeat transparent;
+  text-indent: -3000px;
 }
-.jumbotron .lead {
-  font-size: 24px;
-  line-height: 1.25;
+.jumbotron ul {
+  margin: 20px 0px;
 }
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+.jumbotron ul li {
+  padding-left: 20px;
+  background: url(../images/haekchen.png) no-repeat 0 5px transparent;
+  color: #172c81;
+  list-style-type: none;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 17.5px;
+  font-family: Times;
+}
+#frontpage-content {
+  padding: 20px 0;
+}
+#frontpage-content .page-header {
+  padding-top: 3px;
+  background: url(../images/picture_leistungen.png) no-repeat 0 0 transparent;
+}
+#frontpage-content .page-header h1 {
+  margin-left: 60px;
+}
+#frontpage-content .page-header.contact {
+  background: url(../images/picture_contact.png) no-repeat 0 18px transparent;
+}
+#frontpage-content #frontpage-text {
+  padding-left: 20px;
+}
+#frontpage-content #frontpage-text .more-link {
+  margin-right: 20px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+#frontpage-content #frontpage-contact {
+  color: #172c81;
+}
+#frontpage-content #frontpage-contact a {
+  color: #297cc4;
+}
+#brand {
+  display: block;
+  overflow: hidden;
+  margin: 20px 0;
+  width: 327px;
+  height: 135px;
+  border: none;
+  background: url(../images/logo.png) 0px 0px no-repeat transparent;
+  text-indent: -3000px;
+}
+#content-wrapper {
+  padding: 20px 0 40px;
 }
 /* Supporting marketing content */
 .marketing {
@@ -6230,28 +6282,102 @@ body {
   margin-top: 28px;
 }
 /* Customize the navbar links to be fill the entire space of the .navbar */
-.navbar .navbar-inner {
+#navbar .navbar .navbar-inner {
   padding: 0;
 }
-.navbar .nav {
+#navbar .navbar .nav {
   margin: 0;
 }
-.navbar .nav li {
+#navbar .navbar .nav li {
   display: table-cell;
-  width: 1%;
   float: none;
+  width: 1%;
 }
-.navbar .nav li a {
-  font-weight: bold;
-  text-align: center;
-  border-left: 1px solid rgba(255, 255, 255, 0.75);
+#navbar .navbar .nav li a {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.75);
+  text-align: center;
+  font-weight: bold;
 }
-.navbar .nav li:first-child a {
+#navbar .navbar .nav li:first-child a {
   border-left: 0;
   border-radius: 3px 0 0 3px;
 }
-.navbar .nav li:last-child a {
+#navbar .navbar .nav li:last-child a {
   border-right: 0;
   border-radius: 0 3px 3px 0;
+}
+.formid-kontakt input[type="text"],
+.formid-kontakt textarea {
+  width: 530px;
+}
+.formid-kontakt input.context {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #2967c4;
+  background-image: -moz-linear-gradient(top, #297cc4, #2948c4);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#297cc4), to(#2948c4));
+  background-image: -webkit-linear-gradient(top, #297cc4, #2948c4);
+  background-image: -o-linear-gradient(top, #297cc4, #2948c4);
+  background-image: linear-gradient(to bottom, #297cc4, #2948c4);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff297cc4', endColorstr='#ff2948c4', GradientType=0);
+  border-color: #2948c4 #2948c4 #1c3185;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #2948c4;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  padding: 11px 19px;
+  font-size: 17.5px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+.formid-kontakt input.context:hover,
+.formid-kontakt input.context:active,
+.formid-kontakt input.context.active,
+.formid-kontakt input.context.disabled,
+.formid-kontakt input.context[disabled] {
+  color: #ffffff;
+  background-color: #2948c4;
+  *background-color: #2541af;
+}
+.formid-kontakt input.context:active,
+.formid-kontakt input.context.active {
+  background-color: #20399a \9;
+}
+.formid-kontakt input.context .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+#footer {
+  position: relative;
+  padding: 40px 20px;
+  background: #297cc4;
+  color: #172c81;
+  background-color: #57acde;
+  background-image: -moz-linear-gradient(top, #76ccf0, #297cc4);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#76ccf0), to(#297cc4));
+  background-image: -webkit-linear-gradient(top, #76ccf0, #297cc4);
+  background-image: -o-linear-gradient(top, #76ccf0, #297cc4);
+  background-image: linear-gradient(to bottom, #76ccf0, #297cc4);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff76ccf0', endColorstr='#ff297cc4', GradientType=0);
+}
+#footer a {
+  color: #172c81;
+}
+#footer p {
+  font-size: 11.9px;
+}
+#footer #footer-contact {
+  position: absolute;
+  top: -25px;
+  display: block;
+  overflow: hidden;
+  background: url(../images/button.png) no-repeat 0 0 transparent;
+  text-indent: -99999px;
+  width: 210px;
+  height: 70px;
 }

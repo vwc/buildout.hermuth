@@ -10,19 +10,23 @@
     <tal:main-macro metal:define-macro="main">
     
     <tal:frontpage tal:condition="view/has_landingpage">
-    <div id="front-content"
+    <div id="frontpage-content"
         tal:define="item view/landingpage">
-        <div class="row">
-            <div class="cell position-0 width-3:4 ">
-                <div id="left_content">
-                    <h1 id="leistungen">Leistungen</h1>
+        <div class="row-fluid">
+            <div class="span9 ">
+                <section id="frontpage-text">
+                    <header class="page-header">
+                        <h1 id="leistungen">Leistungen</h1>
+                    </header>
                     <p tal:content="structure item/text"></p>
-                    <div class="ovMore"><a href="/">mehr</a></div>
-                </div>
+                    <div class="more-link pull-right"><a href="/">mehr</a></div>
+                </section>
             </div>
-            <div class="cell position-3:4 width-5">
-                <div id="right_content">
-                    <h1 id="contact">Kontakt</h1>
+            <div class="span3">
+                <aside id="frontpage-contact">
+                    <header class="page-header contact">
+                        <h1 id="contact">Kontakt</h1>
+                    </header>
                     <h4>Wolfgang Hermuth</h4>
                     <p>Umwelt + Industrie Anlagen GmbH
                         <br />
@@ -37,37 +41,13 @@
                         <br />
                         <a href="mailto:Info@hermuth-harburg.de">Mail: Info@hermuth-harburg.de</a>
                     </p>
-                </div>
+                </aside>
             </div>
             
             <div class="visualClear">&nbsp;</div>
             
             <div id="line"><!-- --></div>
-<!--                <tal:block tal:define="teasers item/teasers">
-                <div id="gallery">
-                    <a class="next browse left"></a>
-                    <div class="scrollable">
-                        <div class="items">
-                            <tal:block tal:repeat="lpt teasers">
-                                <div class="teas-wrapper">
-                                    <p class="customerTitle" tal:content="lpt/title" />
-                                    <div class="teaserImg">
-                                        <a href="" class="xprettyPhoto"
-                                            rel="prettyPhoto[gallery]"
-                                            tal:define="item_url lpt/url"
-                                            tal:attributes="href python:item_url+'/@@images/image'">
-                                            <img tal:replace="structure lpt/imageTag" />
-                                        </a>
-                                    </div>
-                                    <p class="discreet" tal:content="lpt/description" />
-                                </div>
-                            </tal:block>
-                        </div>
-                    </div>
-                    <a class="prev browse right"></a>
-                </div>
-                </tal:block>
--->        </div>
+        </div>
     </div>
     </tal:frontpage>
     </tal:main-macro>

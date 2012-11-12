@@ -12,21 +12,20 @@
         tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
         <div id="slfcon-wrapper" tal:condition="view/haveProducts">
             <tal:block tal:repeat="item view/contained_products">
-                <div class="ov-wrapper row">
-                    <div class="ovImg cell width-1:4 position-0">
+                <div class="media">
+                    <div class="media-object pull-left">
                         <img tal:replace="structure item/imageTag" />
                     </div>
-                    <div class="ovText cell width-3:4 position-1:4">
-                    <a tal:attributes="href item/url">
+                    <div class="media-content">
+                      <a tal:attributes="href item/url">
                         <div class="containedTitle" tal:content="item/title" />
-                    </a>
-                    <div class="containedDescription" tal:content="item/description" />
-                        <div class="ovMore">
-                            <a tal:attributes="href item/url">mehr</a>
-                        </div>
-                    </div>        
+                      </a>
+                      <div class="containedDescription" tal:content="item/description" />
+                      <div class="ovMore">
+                        <a tal:attributes="href item/url">mehr</a>
+                      </div>
+                    </div>     
                 </div>
-                <div class="visualClear"><!-- --></div>
             </tal:block>
         </div>
 
