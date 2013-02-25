@@ -26,7 +26,7 @@ setup(name='whermuth.sitecontent',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'plone.app.dexterity',
+          'plone.app.dexterity [grok,relations]',
           'plone.namedfile',
           'plone.formwidget.namedfile',
           'collective.autopermission',
