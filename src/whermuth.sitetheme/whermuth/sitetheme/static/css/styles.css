@@ -6208,6 +6208,7 @@ table.grid th {
 }
 /* Main marketing message and sign up button */
 .jumbotron {
+    min-height: 320px;
   padding: 20px 0px 120px 0;
   background: url(../images/header_bg_neu.png) 50% 0px no-repeat transparent;
 }
