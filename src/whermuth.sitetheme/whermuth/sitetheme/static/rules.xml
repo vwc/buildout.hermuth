@@ -4,7 +4,7 @@
     xmlns:css="http://namespaces.plone.org/diazo/css"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
    
-    <theme href="frontpage.html" css:if-content="body.section-startseite" />
+    <theme href="frontpage.html" css:if-content="body.section-startseite-1" />
     
     <!-- Apply rules to a standard Plone Webpage -->
     <rules css:if-content="#visual-portal-wrapper">
